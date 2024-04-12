@@ -14,8 +14,8 @@ def convert_webp_to_png(directory):
             new_file_path = os.path.join(directory, new_filename)
             # Save the image in PNG format
             img.save(new_file_path, 'PNG')
-            print(f"Converted {filename} to {new_filename}")
+            print(f"Converted {filename}")
 
 # Specify the directory containing the WEBP files
-directory = "path/to/folder"
+directory = "~/Desktop/"
 convert_webp_to_png(directory)
