@@ -1,7 +1,12 @@
 import os
 from PIL import Image
 
+#Converts all WEBP files in the direcotry given on the second to last line to PNG format
+
 def convert_webp_to_png(directory):
+    # Expand the user's home directory
+    directory = os.path.expanduser(directory)
+
     # Loop through all files in the directory
     for filename in os.listdir(directory):
         if filename.endswith(".webp"):
@@ -17,5 +22,6 @@ def convert_webp_to_png(directory):
             print(f"Converted {filename}")
 
 # Specify the directory containing the WEBP files
-directory = "~/Desktop/"
+directory = '~/Desktop/'
 convert_webp_to_png(directory)
+
