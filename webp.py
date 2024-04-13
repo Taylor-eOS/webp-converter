@@ -1,7 +1,7 @@
 import os
 from PIL import Image
 
-#Converts all WEBP files in the direcotry given on the second to last line to PNG format
+#Converts all WEBP files in the direcotry to PNG format
 directory = '~/Desktop/'
 
 def convert_webp_to_png(directory):
