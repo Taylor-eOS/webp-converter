@@ -16,7 +16,7 @@ def convert_webp_to_png(directory):
             # Open the WEBP file with Pillow
             img = Image.open(file_path)
             # Define the new filename with the PNG extension
-            new_filename = filename[:-5] + ".png"
+            new_filename = filename[:-4] + "png"
             new_file_path = os.path.join(directory, new_filename)
             # Save the image in PNG format
             #img.save(new_file_path, 'PNG')
