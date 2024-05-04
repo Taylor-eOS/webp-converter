@@ -22,11 +22,11 @@ def convert_webp_to_png(directory):
             #print(f"Convert {filename}")
             if img.mode == 'RGBA':
                 rgb_img = img.convert('RGB')  # Convert to RGB, dropping the alpha channel
-                new_filename = filename[:-4] + "jpg"
+                new_filename = filename[:-4] + "jpeg"
                 new_file_path = os.path.join(directory, new_filename)
                 rgb_img.save(new_file_path, 'JPEG', quality=95)
             else:
-                new_filename = filename[:-4] + "jpg"
+                new_filename = filename[:-4] + "jpeg"
                 new_file_path = os.path.join(directory, new_filename)
                 img.save(new_file_path, 'JPEG', quality=95)
             print(f"Converted {filename} to JPEG")
