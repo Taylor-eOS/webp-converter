@@ -24,8 +24,8 @@ def convert_webp_to_png(directory):
                 img = img.convert('RGB')
             img.save(new_file_path, 'JPEG', quality=95)
             print(f"Converted {filename} to JPEG")
-            #os.remove(file_path)
-            time.sleep(0.3)
+            time.sleep(0.2)
+            #os.remove(webp_filename)
 
 # Specify the directory containing the WEBP files
 convert_webp_to_png(directory)
