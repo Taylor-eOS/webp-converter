@@ -8,9 +8,16 @@ directory = '~/Desktop'
 def convert_webp_to_png(directory):
     directory = os.path.expanduser(directory)
 
-    webp_directory = os.path.join(directory, "webp_files")
+    #webp_directory = os.path.join(directory, "webp_files")
+    #if not os.path.exists(webp_directory):
+    #    os.makedirs(webp_directory)
+
+    documents_directory = os.path.expanduser("~/Documents")
+    webp_directory = os.path.join(documents_directory, "webp_files")
     if not os.path.exists(webp_directory):
         os.makedirs(webp_directory)
+    desktop_directory = os.path.expanduser("~/Desktop")
+    os.chdir(desktop_directory)
 
     for filename in os.listdir(directory):
         if filename.endswith(".webp"):
