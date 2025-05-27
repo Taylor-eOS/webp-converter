@@ -20,9 +20,10 @@ def convert_webp_to_png(directory):
     os.chdir(desktop_directory)
 
     for filename in os.listdir(directory):
-        if filename.endswith(".webp"):
+        if filename.endswith((".png", ".webp")):
             file_path = os.path.join(directory, filename)
-            new_filename = filename[:-4] + "jpeg"
+            base, _ = os.path.splitext(filename)
+            new_filename = base + ".jpeg"
             new_file_path = os.path.join(directory, new_filename)
             webp_filename = os.path.join(webp_directory, filename)
             os.rename(file_path, webp_filename)
