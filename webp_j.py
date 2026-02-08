@@ -2,23 +2,17 @@ import os
 from PIL import Image
 import time
 
-#Converts all WEBP files in the direcotry to PNG format
-directory = '~/Desktop'
+directory = input('Input: ') or '~/Desktop'
+backup_folder = 'webp_files'
 
 def convert_webp_to_png(directory):
     directory = os.path.expanduser(directory)
-
-    #webp_directory = os.path.join(directory, "webp_files")
-    #if not os.path.exists(webp_directory):
-    #    os.makedirs(webp_directory)
-
     documents_directory = os.path.expanduser("~/Documents")
-    webp_directory = os.path.join(documents_directory, "webp_files")
+    webp_directory = os.path.join(documents_directory, backup_folder)
     if not os.path.exists(webp_directory):
         os.makedirs(webp_directory)
     desktop_directory = os.path.expanduser("~/Desktop")
     os.chdir(desktop_directory)
-
     for filename in os.listdir(directory):
         if filename.endswith((".png", ".webp")):
             file_path = os.path.join(directory, filename)
@@ -33,7 +27,6 @@ def convert_webp_to_png(directory):
             img.save(new_file_path, 'JPEG', quality=95)
             print(f"Converted {filename} to JPEG")
             time.sleep(0.2)
-            #os.remove(webp_filename)
 
-# Specify the directory containing the WEBP files
 convert_webp_to_png(directory)
+
