@@ -22,7 +22,7 @@ def convert_webp_to_png(directory):
             webp_filename = os.path.join(webp_directory, filename)
             os.rename(file_path, webp_filename)
             img = Image.open(webp_filename)
-            if img.mode == 'RGBA':
+            if img.mode not in ('RGB', 'JPEG', 'L'):
                 img = img.convert('RGB')
             img.save(new_file_path, 'JPEG', quality=95)
             print(f"Converted {filename} to JPEG")
